@@ -1,5 +1,5 @@
 --
-  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM A.CDDTPPS1   
+  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM E.CDDTPPS1   
   WHERE CODMEMB IN ('2022241007',                               
                     '2023000030',                             
                     '2023000031',                             
@@ -9,7 +9,7 @@
                     '2023050176')                             
   ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC; 
 --
-  UPDATE A.CDDTPPS1
+  UPDATE E.CDDTPPS1
   SET 
      NUMDOCIDEN = CASE CODMEMB
                        WHEN '2022241007' THEN '563829174'
@@ -39,7 +39,7 @@
                     '2023050175',
                     '2023050176'); 
 --
-  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM A.CDDTPPS1   
+  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM E.CDDTPPS1   
   WHERE CODMEMB IN ('2022241007',                               
                     '2023000030',                             
                     '2023000031',                             
