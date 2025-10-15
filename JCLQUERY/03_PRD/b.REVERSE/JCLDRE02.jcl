@@ -5,20 +5,20 @@
 //         INCLUDE MEMBER=VARPARML
 //*----------------------------------------------------------------
 //S01PIEFB EXEC PGM=IEFBR14,COND=(04,LT)                           
-//DATO01   DD DSN=&AMB..PPS.G01SN.PPS.UPDATE.PPST002,
-//            DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(TRK,0) 
+//DATO01   DD DSN=&AMB..PPS.G01SN.PPS.REVERSE.PPST002,
+//            DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(TRK,0)           
 //*----------------------------------------------------------------
-//* CDDTPPS02 - ACTUALIZAR CAMPOS EN DESARROLLO
+//* CDDTPPS01 - REVERTIR CAMBIOS EN DESARROLLO
 //*----------------------------------------------------------------
 //S02PIKJE  EXEC PGM=IKJEFT01,DYNAMNBR=20,COND=(4,LT)
 //SYSUDUMP DD SYSOUT=S                                             
 //SYSTSPRT DD SYSOUT=S                                             
 //SYSOUT   DD SYSOUT=*    
-//SYSPRINT DD DSN=&AMB..PPS.G01SN.PPS.UPDATE.PPST002,            
+//SYSPRINT DD DSN=&AMB..PPS.G01SN.PPS.REVERSE.PPST002,            
 //            DISP=(NEW,CATLG,DELETE),                             
 //            SPACE=(CYL,(1,1),RLSE),UNIT=SYSDA,          
 //            DCB=(RECFM=FB,DSORG=PS)   
 //SYSTSIN  DD DISP=SHR,DSN=&PARMLIB(DSNTEP2)
-//SYSIN    DD DSN=D.PPS.G01SN.PPS.QUERYUAT.UPDATE.PPST002,
+//SYSIN    DD DSN=X.PPS.G01SN.PPS.QUERYPRD.REVERSE.PPST002,
 //            DISP=SHR
 //*
