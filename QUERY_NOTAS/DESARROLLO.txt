@@ -125,7 +125,7 @@ SUCCESSFUL RETRIEVAL OF          7 ROW(S)
 
 
 ---------------------------------------------------------------------------------------------------------
-* REALIZAR DESCARGA DE LAS TABLAS ANTESY DESPUES DE REALIZAR LAS QUERYS
+* REALIZAR DESCARGA DE LAS TABLAS ANTES Y DESPUES DE REALIZAR LAS QUERYS
 * SOLO DEBE HABER DIFERENCIA DE 7 REGISTROS*
 ---------------------------------------------------------------------------------------------------------
 

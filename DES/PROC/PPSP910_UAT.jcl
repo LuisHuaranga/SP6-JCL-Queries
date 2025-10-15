@@ -46,10 +46,10 @@
 //SYSIN     DD DSN=&PARMLIB(PPSS910B),DISP=SHR
 //*
 //*--------------------------------------------------------------------*
-//* STEP 05: BORRADO ARCHIVO SAL01.PCHOST                              *  
+//* STEP 05: BORRADO ARCHIVO SAL03.PCHOST                              *  
 //*--------------------------------------------------------------------*
 //S05PIEFB  EXEC PGM=IEFBR14,COND=(04,LT)
-//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
+//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL03.PCHOST,
 //             DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(CYL,0)
 //*
 //*--------------------------------------------------------------------*
@@ -62,27 +62,27 @@
 //             DISP=SHR
 //PPST001I  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.PPST001.UNL.SORT,
 //             DISP=SHR
-//SALIDA1O  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
+//SALIDA1O  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL03.PCHOST,
 //             DCB=(LRECL=69,RECFM=FB,DSORG=PS,BLKSIZE=0),
 //             UNIT=SYSDA,SPACE=(CYL,(200,100),RLSE),
 //             DISP=(,CATLG,DELETE)
 //*
 //*--------------------------------------------------------------------*
-//* STEP 07: BORRADO ARCHIVO SAL01.PCH.SORT                            *
+//* STEP 07: BORRADO ARCHIVO SAL03.PCH.SORT                            *
 //*--------------------------------------------------------------------*
 //S07PIEFB  EXEC PGM=IEFBR14,COND=(04,LT)
-//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCH.SORT,
+//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL03.PCH.SORT,
 //             DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(CYL,0)
 //*
 //*--------------------------------------------------------------------*
-//* STEP 08: ORDENAMIENTO ARCHIVO SAL01.PCH.SORT                       *
+//* STEP 08: ORDENAMIENTO ARCHIVO SAL03.PCH.SORT                       *
 //*--------------------------------------------------------------------*
 //S08PSORT  EXEC PGM=SORT,COND=(04,LT)
 //SYSOUT    DD SYSOUT=&OUTS
 //SYSPRINT  DD SYSOUT=&OUTS
-//SORTIN    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
+//SORTIN    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL03.PCHOST,
 //             DISP=SHR
-//SORTOUT   DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCH.SORT,
+//SORTOUT   DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL03.PCH.SORT,
 //             DCB=(LRECL=69,RECFM=FB,DSORG=PS,BLKSIZE=0),
 //             UNIT=SYSDA,SPACE=(CYL,(200,100),RLSE),
 //             DISP=(,CATLG,DELETE)
@@ -109,10 +109,10 @@
 //SYSIN     DD DSN=&PARMLIB(PPSS910D),DISP=SHR
 //*
 //*--------------------------------------------------------------------*
-//* STEP 13: BORRADO SAL02.PCHOST                                     *
+//* STEP 13: BORRADO SAL04.PCHOST                                     *
 //*--------------------------------------------------------------------*
 //S13PIEFB  EXEC PGM=IEFBR14,COND=(04,LT)
-//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL02.PCHOST,
+//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL04.PCHOST,
 //             DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(CYL,0)
 //*
 //*--------------------------------------------------------------------*
@@ -121,11 +121,11 @@
 //S14PB912  EXEC PGM=PPSB912,COND=(04,LT)
 //SYSOUT    DD SYSOUT=&OUTS
 //SYSPRINT  DD SYSOUT=&OUTS
-//INCMEMBI  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCH.SORT,
+//INCMEMBI  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL03.PCH.SORT,
 //             DISP=SHR
 //PPST002I  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.PPST002.UNL.SORT,
 //             DISP=SHR
-//SALIDA2O  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL02.PCHOST,
+//SALIDA2O  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL04.PCHOST,
 //             DCB=(LRECL=91,RECFM=FB,DSORG=PS,BLKSIZE=0),
 //             UNIT=SYSDA,SPACE=(CYL,(200,100),RLSE),
 //             DISP=(,CATLG,DELETE)
