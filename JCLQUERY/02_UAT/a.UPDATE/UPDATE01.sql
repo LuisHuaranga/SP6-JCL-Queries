@@ -1,50 +1,40 @@
 --
   SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM A.CDDTPPS1   
-  WHERE CODMEMB IN ('2022241007',                               
-                    '2023000030',                             
-                    '2023000031',                             
-                    '2023050173',                             
-                    '2023050174',                             
-                    '2023050175',                             
+  WHERE CODMEMB IN ('1041453802',                               
+                    '2000500012',                             
+                    '2000500020',                             
+                    '2023050084',                                                          
                     '2023050176')                             
   ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC; 
 --
   UPDATE A.CDDTPPS1
   SET 
      NUMDOCIDEN = CASE CODMEMB
-                       WHEN '2022241007' THEN '563829174'
-                       WHEN '2023000030' THEN '982734651'
-                       WHEN '2023000031' THEN '283746519'
-                       WHEN '2023050173' THEN '19284756'
-                       WHEN '2023050174' THEN '65192837'
-                       WHEN '2023050175' THEN '83920174'
-                       WHEN '2023050176' THEN '475638291'
+                       WHEN '1041453802' THEN '80000561'
+                       WHEN '2000500012' THEN '10119444'
+                       WHEN '2000500020' THEN '80111742'
+                       WHEN '2023050084' THEN '96125843'
+                       WHEN '2023050176' THEN '28690821'
                        ELSE NUMDOCIDEN
                     END,
     TIPDOCIDEN = CASE CODMEMB
-                       WHEN '2022241007' THEN 3
-                       WHEN '2023000030' THEN 3
-                       WHEN '2023000031' THEN 3
-                       WHEN '2023050173' THEN 1
-                       WHEN '2023050174' THEN 1
-                       WHEN '2023050175' THEN 1
+                       WHEN '1041453802' THEN 1
+                       WHEN '2000500012' THEN 1
+                       WHEN '2000500020' THEN 1
+                       WHEN '2023050084' THEN 3
                        WHEN '2023050176' THEN 3
                        ELSE TIPDOCIDEN
                     END      
-  WHERE CODMEMB IN ('2022241007',
-                    '2023000030',
-                    '2023000031',
-                    '2023050173',
-                    '2023050174',
-                    '2023050175',
+  WHERE CODMEMB IN ('1041453802',
+                    '2000500012',
+                    '2000500020',
+                    '2023050084',
                     '2023050176'); 
 --
   SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM A.CDDTPPS1   
-  WHERE CODMEMB IN ('2022241007',                               
-                    '2023000030',                             
-                    '2023000031',                             
-                    '2023050173',                             
-                    '2023050174',                             
-                    '2023050175',                             
+  WHERE CODMEMB IN ('1041453802',                               
+                    '2000500012',                             
+                    '2000500020',                             
+                    '2023050084',                                                         
                     '2023050176')                             
   ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;
