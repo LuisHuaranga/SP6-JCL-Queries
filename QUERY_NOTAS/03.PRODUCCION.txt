@@ -11,18 +11,6 @@ INPUT:
 |   A.PPS.G01SN.PPS.PPSP438.ALTAPDT.VARIABLE   |
 +----------------------------------------------+
 
-Membresía,Source Code,Issue Date,Expiry Date,Title,Nombre,Apellido,Invitacion Code,
-2023050176,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Javier,Herrera Cruz,C28690821,
-2000500032,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Diego,Flores Mendez,C801101222,
-2022241001,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Lucia,Castillo Rios,C002175314,
-1087413124,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Carlos,Gomez Ruiz,DN70009076,
-2000500020,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Sofia,Morales Diaz,DN80111742,
-2000500004,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Ana,Torres Vega,DN32628645,
-2000500012,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Luis,Ramirez Soto,DN10119444,
-2023050084,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Andres,Gutierrez Peña,C96125843,
-2023050142,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Elena,Navarro Silva,C456948511,
-1041453802,DAIBPA2103DMC,2023-10-03,2024-10-02,Mrs.,Maria,Perez Lopez,DN80000561,
-
 OUTPUTS:
 
 +------------------------------------------+
@@ -30,12 +18,14 @@ OUTPUTS:
 +------------------------------------------+
 
 MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;
-1041453802;DN80000561;1041453802;00000001;80213561   ;1;CANCELADO;
-2000500012;DN10119444;2000500012;00000001;10119018   ;1;ACTIVO   ;
-2000500020;DN80111742;2000500020;00000001;20111743   ;1;ACTIVO   ;
-2023050084;C96125843 ;2023050084;00000001;16125842   ;3;CANCELADO;
-2023050176;C28690821 ;2023050176;00000001;20220821   ;3;CANCELADO; 
-
+1079139679;C001407423;1079139679;00000001;49090986   ;1;ACTIVO   ;
+1080358581;C20220551 ;1080358581;00000001;03672024   ;3;ACTIVO   ;
+1086374228;C003736053;1086374228;00000001;G29406165  ;5;ACTIVO   ;
+1087340962;C004941835;1087340962;00000001;PAP485455  ;5;ACTIVO   ;
+1088571078;C001093804;1088571078;00000001;AAK050206  ;5;ACTIVO   ;
+1090033679;C001437633;1090033679;00000001;XDC864941  ;5;ACTIVO   ;
+1098395633;C002298227;1098395633;00000001;AAK666021  ;5;ACTIVO   ;
+1102436589;C001363300;1102436589;00000001;49099192   ;1;ACTIVO   ;  
 
 
 +------------------------------------------+
@@ -43,249 +33,17 @@ MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;
 +------------------------------------------+
 
 MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;CUENTA;CODMAR;INDTIPT;
-2000500012;DN10119444;2000500012;00000001;10119018   ;1;ACTIVO   ;000002882532;01;29;
-2000500020;DN80111742;2000500020;00000001;20111743   ;1;ACTIVO   ;000002679207;01;14;
-1041453802;DN80000561;1041453802;00000001;80213561   ;1;CANCELADO;000002126454;02;09;
-2023050084;C96125843 ;2023050084;00000001;16125842   ;3;CANCELADO;000002300417;02;06;
-2023050176;C28690821 ;2023050176;00000001;20220821   ;3;CANCELADO;000002305141;01;29;
+1079139679;C001407423;1079139679;00000001;49090986   ;1;ACTIVO   ;000007578522;02;06;
+1102436589;C001363300;1102436589;00000001;49099192   ;1;ACTIVO   ;000008939126;01;14;
+1080358581;C20220551 ;1080358581;00000001;03672024   ;3;ACTIVO   ;000008628800;01;14;
+1088571078;C001093804;1088571078;00000001;AAK050206  ;5;ACTIVO   ;000006520280;01;29;
+1098395633;C002298227;1098395633;00000001;AAK666021  ;5;ACTIVO   ;000007464725;02;06;
+1086374228;C003736053;1086374228;00000001;G29406165  ;5;ACTIVO   ;000007683104;01;29;
+1087340962;C004941835;1087340962;00000001;PAP485455  ;5;ACTIVO   ;000008736533;02;06;
+1090033679;C001437633;1090033679;00000001;XDC864941  ;5;ACTIVO   ;000008475667;02;06;
 
 
 ENTONCES MEMBERS CON NUMDOCIDEN Y TIPDOCIDEN CORRECTOS 
 EXTRAIDOS DE (ARCHIVOS DE SALIDA03 y SALIDA04):
 
-    +---------------------------------------+-------------+--------------+
-    |  CODMEMB   | NUMDOCIDEN  | TIPDOCIDEN |   NUMSEC    |    CUENTA    |   
-    +---------------------------------------+-------------+--------------+
- 01_| 1041453802 | 80000561    | 1          |         1   | 000002126454 |   
- 02_| 2000500012 | 10119444    | 1          |         1   | 000002882532 |   
- 03_| 2000500020 | 80111742    | 1          |         1   | 000002679207 |      
- 04_| 2023050084 | 96125843    | 3          |         1   | 000002300417 |      
- 05_| 2023050176 | 28690821    | 3          |         1   | 000002305141 |      
-    +---------------------------------------+-------------+-------------+
-
----------------------------------------------------------------------------------------------------------
-
-DATOS ORIGINALES DESARROLLO (RESULTADO DE QUERY) NUMDOCIDEN y TIPDOCIDEN ERRADOS:
-
-TABLA A.CDDTPPS1:
-
- ***INPUT STATEMENT:                                            
-  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM A.CDDTPPS1   
-  WHERE CODMEMB IN ('1041453802',                               
-                    '2000500012',                             
-                    '2000500020',                             
-                    '2023050084',                                                          
-                    '2023050176')                             
-  ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;            
-        +-----------------------------------------------------+ 
-        |  CODMEMB   | NUMDOCIDEN  | TIPDOCIDEN |   NUMSEC    | 
-        +-----------------------------------------------------+ 
-      1_|            |             |            |             | 
-      2_|            |             |            |             | 
-      3_|            |             |            |             | 
-      4_|            |             |            |             | 
-      5_|            |             |            |             |  
-        +-----------------------------------------------------+ 
- SUCCESSFUL RETRIEVAL OF          5 ROW(S)                      
-	
-
-TABLA A.CDDTPPS2:
-
-***INPUT STATEMENT:
-    SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC,CUENTA 
-    FROM A.CDDTPPS2
-    WHERE 
-    (CODMEMB = '1041453802' AND NUMSEC = 1 AND CUENTA = '000002126454') OR
-    (CODMEMB = '2000500012' AND NUMSEC = 1 AND CUENTA = '000002882532') OR
-    (CODMEMB = '2000500020' AND NUMSEC = 1 AND CUENTA = '000002679207') OR
-    (CODMEMB = '2023050084' AND NUMSEC = 1 AND CUENTA = '000002300417') OR
-    (CODMEMB = '2023050176' AND NUMSEC = 1 AND CUENTA = '000002305141')
-    ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;
-       +--------------------------------------------------------------------+
-       |  CODMEMB   | NUMDOCIDEN  | TIPDOCIDEN |   NUMSEC    |    CUENTA    |
-       +--------------------------------------------------------------------+
-     1_|            |             |            |             |              |
-     2_|            |             |            |             |              |
-     3_|            |             |            |             |              |
-     4_|            |             |            |             |              |
-     5_|            |             |            |             |              |
-       +--------------------------------------------------------------------+
-SUCCESSFUL RETRIEVAL OF          5 ROW(S)
-
-
----------------------------------------------------------------------------------------------------------
-* REALIZAR DESCARGA DE LAS TABLAS ANTES Y DESPUES DE REALIZAR LAS QUERYS
-* SOLO DEBE HABER DIFERENCIA DE 7 REGISTROS*
----------------------------------------------------------------------------------------------------------
-
-
-+-----------------------------------------------------------------------+
-|                         QUERYS TABLA CDDTPPS1                         |
-+-----------------------------------------------------------------------+
---  _______________
--- / QUERY SELECT /
--- ´´´´´´´´´´´´´´´
--- 
-  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM D.CDDTPPS1   
-  WHERE CODMEMB IN ('1041453802',                               
-                    '2000500012',                             
-                    '2000500020',                             
-                    '2023050084',                                                         
-                    '2023050176')                             
-  ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC; 
-
---  _______________
--- / QUERY UPDATE /
--- ´´´´´´´´´´´´´´´
--- 
-  UPDATE A.CDDTPPS1
-  SET 
-     NUMDOCIDEN = CASE CODMEMB
-                       WHEN '1041453802' THEN ''
-                       WHEN '2000500012' THEN ''
-                       WHEN '2000500020' THEN ''
-                       WHEN '2023050084' THEN ''
-                       WHEN '2023050176' THEN ''
-                       ELSE NUMDOCIDEN
-                    END,
-      TIPDOCIDEN = CASE CODMEMB
-                       WHEN '1041453802' THEN 1
-                       WHEN '2000500012' THEN 1
-                       WHEN '2000500020' THEN 1
-                       WHEN '2023050084' THEN 3
-                       WHEN '2023050176' THEN 3
-                       ELSE TIPDOCIDEN
-                    END      
-  WHERE CODMEMB IN ('1041453802',
-                    '2000500012',
-                    '2000500020',
-                    '2023050084',
-                    '2023050176');
-
---  ________________
--- / QUERY REVERSE /
--- ´´´´´´´´´´´´´´´´
--- 
-  UPDATE A.CDDTPPS1
-  SET 
-     NUMDOCIDEN = CASE CODMEMB
-                       WHEN '2022241007' THEN ''
-                       WHEN '2023000030' THEN ''
-                       WHEN '2023000031' THEN ''
-                       WHEN '2023050173' THEN ''
-                       WHEN '2023050174' THEN ''
-                       ELSE NUMDOCIDEN
-                    END,
-      TIPDOCIDEN = CASE CODMEMB
-                       WHEN '2022241007' THEN 1
-                       WHEN '2023000030' THEN 1
-                       WHEN '2023000031' THEN 1
-                       WHEN '2023050173' THEN 3
-                       WHEN '2023050174' THEN 3
-                       ELSE TIPDOCIDEN
-                    END     
-  WHERE CODMEMB IN ('2022241007',
-                    '2023000030',
-                    '2023000031',
-                    '2023050173',
-                    '2023050176');
-
-
-
-+-----------------------------------------------------------------------+
-|                         QUERYS TABLA CDDTPPS2                         |
-+-----------------------------------------------------------------------+
---  _______________
--- / QUERY SELECT /
--- ´´´´´´´´´´´´´´´
--- 
-    SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC,CUENTA 
-    FROM A.CDDTPPS2
-    WHERE 
-    (CODMEMB = '1041453802' AND CUENTA = '000002126454' AND NUMSEC = 1) OR
-    (CODMEMB = '2000500012' AND CUENTA = '000002882532' AND NUMSEC = 1) OR
-    (CODMEMB = '2000500020' AND CUENTA = '000002679207' AND NUMSEC = 1) OR
-    (CODMEMB = '2023050084' AND CUENTA = '000002300417' AND NUMSEC = 1) OR
-    (CODMEMB = '2023050176' AND CUENTA = '000002305141' AND NUMSEC = 1)
-    ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;
-
---  _______________
--- / QUERY UPDATE /
--- ´´´´´´´´´´´´´´´
--- 
-UPDATE A.CDDTPPS2
-SET 
-  NUMDOCIDEN = CASE 
-      WHEN  CODMEMB = '1041453802' 
-        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN '80000561'
-      WHEN  CODMEMB = '2000500012' 
-        AND CUENTA  = '000002882532' AND NUMSEC  = 1 THEN '10119444'
-      WHEN  CODMEMB = '2000500020' 
-        AND CUENTA  = '000002679207' AND NUMSEC  = 1 THEN '80111742'
-      WHEN  CODMEMB = '2023050084' 
-        AND CUENTA  = '000002300417' AND NUMSEC  = 1 THEN '96125843'
-      WHEN  CODMEMB = '2023050176' 
-        AND CUENTA  = '000002305141' AND NUMSEC  = 1 THEN '28690821'
-      ELSE  NUMDOCIDEN 
-  END,
-  TIPDOCIDEN = CASE 
-      WHEN  CODMEMB = '1041453802' 
-        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN  1
-      WHEN  CODMEMB = '2000500012' 
-        AND CUENTA  = '000002882532' AND NUMSEC  = 1 THEN  1
-      WHEN  CODMEMB = '2000500020' 
-        AND CUENTA  = '000002679207' AND NUMSEC  = 1 THEN  1
-      WHEN  CODMEMB = '2023050084' 
-        AND CUENTA  = '000002300417' AND NUMSEC  = 1 THEN  3
-      WHEN  CODMEMB = '2023050176' 
-        AND CUENTA  = '000002305141' AND NUMSEC  = 1 THEN  3
-      ELSE  TIPDOCIDEN
-  END
-WHERE CODMEMB IN (
-    '1041453802',
-    '2000500012',
-    '2000500020',
-    '2023050084',
-    '2023050176'
-);       
-
---  ________________
--- / QUERY REVERSE /
--- ´´´´´´´´´´´´´´´´
--- 
-UPDATE A.CDDTPPS2
-SET 
-  NUMDOCIDEN = CASE 
-      WHEN  CODMEMB = '1041453802' 
-        AND CUENTA  = '000002283324' AND NUMSEC  = 1 THEN '80213561'
-      WHEN  CODMEMB = '2000500012' 
-        AND CUENTA  = '000002267630' AND NUMSEC  = 1 THEN '10119018'
-      WHEN  CODMEMB = '2000500020' 
-        AND CUENTA  = '000002267627' AND NUMSEC  = 1 THEN '20111743'
-      WHEN  CODMEMB = '2023050084' 
-        AND CUENTA  = '000002288785' AND NUMSEC  = 1 THEN '16125842'
-      WHEN  CODMEMB = '2023050176' 
-        AND CUENTA  = '000002305639' AND NUMSEC  = 1 THEN '20220821'
-      ELSE  NUMDOCIDEN 
-  END,
-  TIPDOCIDEN = CASE 
-      WHEN  CODMEMB = '1041453802' 
-        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN 1
-      WHEN  CODMEMB = '2000500012' 
-        AND CUENTA  = '000002882532' AND NUMSEC  = 1 THEN 1
-      WHEN  CODMEMB = '2000500020' 
-        AND CUENTA  = '000002679207' AND NUMSEC  = 1 THEN 1
-      WHEN  CODMEMB = '2023050084' 
-        AND CUENTA  = '000002300417' AND NUMSEC  = 1 THEN 3
-      WHEN  CODMEMB = '2023050176' 
-        AND CUENTA  = '000002305141' AND NUMSEC  = 1 THEN 3
-      ELSE  TIPDOCIDEN
-  END
-WHERE CODMEMB IN (
-    '1041453802',
-    '2000500012',
-    '2000500020',
-    '2023050084',
-    '2023050176'
-);
 
