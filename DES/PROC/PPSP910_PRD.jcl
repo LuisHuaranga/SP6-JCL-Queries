@@ -49,7 +49,7 @@
 //* STEP 05: BORRADO ARCHIVO SAL01.PCHOST                              *  
 //*--------------------------------------------------------------------*
 //S05PIEFB  EXEC PGM=IEFBR14,COND=(04,LT)
-//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
+//SYSUT1    DD DSN=X.PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
 //             DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(CYL,0)
 //*
 //*--------------------------------------------------------------------*
@@ -62,7 +62,7 @@
 //             DISP=SHR
 //PPST001I  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.PPST001.UNL.SORT,
 //             DISP=SHR
-//SALIDA1O  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
+//SALIDA1O  DD DSN=X.PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
 //             DCB=(LRECL=69,RECFM=FB,DSORG=PS,BLKSIZE=0),
 //             UNIT=SYSDA,SPACE=(CYL,(200,100),RLSE),
 //             DISP=(,CATLG,DELETE)
@@ -80,7 +80,7 @@
 //S08PSORT  EXEC PGM=SORT,COND=(04,LT)
 //SYSOUT    DD SYSOUT=&OUTS
 //SYSPRINT  DD SYSOUT=&OUTS
-//SORTIN    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
+//SORTIN    DD DSN=X.PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCHOST,
 //             DISP=SHR
 //SORTOUT   DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL01.PCH.SORT,
 //             DCB=(LRECL=69,RECFM=FB,DSORG=PS,BLKSIZE=0),
@@ -112,7 +112,7 @@
 //* STEP 13: BORRADO SAL02.PCHOST                                     *
 //*--------------------------------------------------------------------*
 //S13PIEFB  EXEC PGM=IEFBR14,COND=(04,LT)
-//SYSUT1    DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL02.PCHOST,
+//SYSUT1    DD DSN=X.PPS.&GRPB.SN.PPS.PPSP910.SAL02.PCHOST,
 //             DISP=(MOD,DELETE),UNIT=SYSDA,SPACE=(CYL,0)
 //*
 //*--------------------------------------------------------------------*
@@ -125,7 +125,7 @@
 //             DISP=SHR
 //PPST002I  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.PPST002.UNL.SORT,
 //             DISP=SHR
-//SALIDA2O  DD DSN=&AMB..PPS.&GRPB.SN.PPS.PPSP910.SAL02.PCHOST,
+//SALIDA2O  DD DSN=X.PPS.&GRPB.SN.PPS.PPSP910.SAL02.PCHOST,
 //             DCB=(LRECL=91,RECFM=FB,DSORG=PS,BLKSIZE=0),
 //             UNIT=SYSDA,SPACE=(CYL,(200,100),RLSE),
 //             DISP=(,CATLG,DELETE)
