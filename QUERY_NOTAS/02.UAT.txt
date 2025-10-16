@@ -141,11 +141,11 @@ SUCCESSFUL RETRIEVAL OF          5 ROW(S)
   UPDATE A.CDDTPPS1
   SET 
      NUMDOCIDEN = CASE CODMEMB
-                       WHEN '1041453802' THEN ''
-                       WHEN '2000500012' THEN ''
-                       WHEN '2000500020' THEN ''
-                       WHEN '2023050084' THEN ''
-                       WHEN '2023050176' THEN ''
+                       WHEN '1041453802' THEN '80000561'
+                       WHEN '2000500012' THEN '10119444'
+                       WHEN '2000500020' THEN '80111742'
+                       WHEN '2023050084' THEN '96125843'
+                       WHEN '2023050176' THEN '28690821'
                        ELSE NUMDOCIDEN
                     END,
       TIPDOCIDEN = CASE CODMEMB
@@ -169,25 +169,25 @@ SUCCESSFUL RETRIEVAL OF          5 ROW(S)
   UPDATE A.CDDTPPS1
   SET 
      NUMDOCIDEN = CASE CODMEMB
-                       WHEN '2022241007' THEN ''
-                       WHEN '2023000030' THEN ''
-                       WHEN '2023000031' THEN ''
-                       WHEN '2023050173' THEN ''
-                       WHEN '2023050174' THEN ''
+                       WHEN '1041453802' THEN '80213561'
+                       WHEN '2000500012' THEN '10119018'
+                       WHEN '2000500020' THEN '20111743'
+                       WHEN '2023050084' THEN '16125842'
+                       WHEN '2023050176' THEN '20220821'
                        ELSE NUMDOCIDEN
                     END,
       TIPDOCIDEN = CASE CODMEMB
-                       WHEN '2022241007' THEN 1
-                       WHEN '2023000030' THEN 1
-                       WHEN '2023000031' THEN 1
-                       WHEN '2023050173' THEN 3
-                       WHEN '2023050174' THEN 3
+                       WHEN '1041453802' THEN 1
+                       WHEN '2000500012' THEN 1
+                       WHEN '2000500020' THEN 1
+                       WHEN '2023050084' THEN 3
+                       WHEN '2023050176' THEN 3
                        ELSE TIPDOCIDEN
                     END     
-  WHERE CODMEMB IN ('2022241007',
-                    '2023000030',
-                    '2023000031',
-                    '2023050173',
+  WHERE CODMEMB IN ('1041453802',
+                    '2000500012',
+                    '2000500020',
+                    '2023050084',
                     '2023050176');
 
 
