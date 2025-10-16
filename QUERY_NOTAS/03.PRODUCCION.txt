@@ -1,20 +1,20 @@
 DESCARGAS:
 +----------------------------------------------+
-|    E.PPS.G01SN.PPS.PPSP170.PPST001.UNLOAD    |
-|    E.PPS.G01SN.PPS.PPSP436.PPST002.UNLOAD    |
+|    X.PPS.G01SN.PPS.PPSP170.PPST001.UNLOAD    |
+|    X.PPS.G01SN.PPS.PPSP436.PPST002.UNLOAD    |
 +----------------------------------------------+
 
 
 INPUT:
 
 +----------------------------------------------+
-|   A.PPS.G01SN.PPS.PPSP438.ALTAPDT.VARIABLE   |
+|   X.PPS.G01SN.PPS.PPSP438.ALTAPDT.VARIABLE   |
 +----------------------------------------------+
 
 OUTPUTS:
 
 +------------------------------------------+
-|   D.PPS.G01SN.PPS.PPSP910.SAL03.PCHOST   |
+|   X.PPS.G01SN.PPS.PPSP910.SAL03.PCHOST   |
 +------------------------------------------+
 
 MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;
@@ -29,7 +29,7 @@ MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;
 
 
 +------------------------------------------+
-|   D.PPS.G01SN.PPS.PPSP910.SAL04.PCHOST   |
+|   X.PPS.G01SN.PPS.PPSP910.SAL04.PCHOST   |
 +------------------------------------------+
 
 MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;CUENTA;CODMAR;INDTIPT;
@@ -45,5 +45,305 @@ MEMBER N°;VENDOR CODE;CODMEMB;NUMSEC;NUMDOCIDEN;TIPDOCIDEN;SITUACION;CUENTA;COD
 
 ENTONCES MEMBERS CON NUMDOCIDEN Y TIPDOCIDEN CORRECTOS 
 EXTRAIDOS DE (ARCHIVOS DE SALIDA03 y SALIDA04):
+
+    +---------------------------------------+-------------+--------------+
+    |  CODMEMB   | NUMDOCIDEN   | TIPDOCIDEN |   NUMSEC   |    CUENTA    |   
+    +---------------------------------------+-------------+--------------+
+ 01_| 1079139679 | 001407423    | 3          |         1   | 000007578522 |   
+ 02_| 1080358581 | 20220551     | 3          |         1   | 000008628800 |   
+ 03_| 1086374228 | 003736053    | 3          |         1   | 000007683104 |      
+ 04_| 1087340962 | 004941835    | 3          |         1   | 000008736533 |      
+ 05_| 1088571078 | 001093804    | 3          |         1   | 000006520280 |
+ 06_| 1090033679 | 001437633    | 3          |         1   | 000008475667 |      
+ 07_| 1098395633 | 002298227    | 3          |         1   | 000007464725 |      
+ 08_| 1102436589 | 001363300    | 3          |         1   | 000008939126 |      
+    +---------------------------------------+-------------+-------------+
+
+---------------------------------------------------------------------------------------------------------
+
+DATOS ORIGINALES DESARROLLO (RESULTADO DE QUERY) NUMDOCIDEN y TIPDOCIDEN ERRADOS:
+
+TABLA E.CDDTPPS1:
+
+ ***INPUT STATEMENT:                                            
+  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM E.CDDTPPS1   
+  WHERE CODMEMB IN ('1079139679',                               
+                    '1080358581',                             
+                    '1086374228',                             
+                    '1087340962',
+                    '1088571078',                                                          
+                    '1090033679',                                                          
+                    '1098395633',                                                          
+                    '1102436589')                             
+  ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;            
+        +-----------------------------------------------------+ 
+        |  CODMEMB   | NUMDOCIDEN  | TIPDOCIDEN |   NUMSEC    | 
+        +-----------------------------------------------------+ 
+      1_|            |             |            |             | 
+      2_|            |             |            |             | 
+      3_|            |             |            |             | 
+      4_|            |             |            |             | 
+      5_|            |             |            |             |  
+      6_|            |             |            |             |  
+      7_|            |             |            |             |  
+      8_|            |             |            |             |  
+        +-----------------------------------------------------+ 
+ SUCCESSFUL RETRIEVAL OF          8 ROW(S)                      
+	
+
+TABLA A.CDDTPPS2:
+
+***INPUT STATEMENT:
+    SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC,CUENTA 
+    FROM E.CDDTPPS2
+    WHERE 
+    (CODMEMB = '1079139679' AND NUMSEC = 1 AND CUENTA = '000007578522') OR
+    (CODMEMB = '1080358581' AND NUMSEC = 1 AND CUENTA = '000008628800') OR
+    (CODMEMB = '1086374228' AND NUMSEC = 1 AND CUENTA = '000007683104') OR
+    (CODMEMB = '1087340962' AND NUMSEC = 1 AND CUENTA = '000008736533') OR
+    (CODMEMB = '1088571078' AND NUMSEC = 1 AND CUENTA = '000006520280') OR
+    (CODMEMB = '1090033679' AND NUMSEC = 1 AND CUENTA = '000008475667') OR
+    (CODMEMB = '1098395633' AND NUMSEC = 1 AND CUENTA = '000007464725') OR
+    (CODMEMB = '1102436589' AND NUMSEC = 1 AND CUENTA = '000008939126')
+    ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;
+       +--------------------------------------------------------------------+
+       |  CODMEMB   | NUMDOCIDEN  | TIPDOCIDEN |   NUMSEC    |    CUENTA    |
+       +--------------------------------------------------------------------+
+     1_|            |             |            |             |              |
+     2_|            |             |            |             |              |
+     3_|            |             |            |             |              |
+     4_|            |             |            |             |              |
+     5_|            |             |            |             |              |
+       +--------------------------------------------------------------------+
+SUCCESSFUL RETRIEVAL OF          8 ROW(S)
+
+
+---------------------------------------------------------------------------------------------------------
+* REALIZAR DESCARGA DE LAS TABLAS ANTES Y DESPUES DE REALIZAR LAS QUERYS
+* SOLO DEBE HABER DIFERENCIA DE 7 REGISTROS*
+---------------------------------------------------------------------------------------------------------
+
+
++-----------------------------------------------------------------------+
+|                         QUERYS TABLA CDDTPPS1                         |
++-----------------------------------------------------------------------+
+--  _______________
+-- / QUERY SELECT /
+-- ´´´´´´´´´´´´´´´
+-- 
+  SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC FROM E.CDDTPPS1   
+  WHERE CODMEMB IN ('1079139679',                               
+                    '1080358581',                             
+                    '1086374228',                             
+                    '1087340962',                             
+                    '1088571078',                             
+                    '1090033679',                             
+                    '1098395633',                                                         
+                    '1102436589')                             
+  ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC; 
+
+--  _______________
+-- / QUERY UPDATE /
+-- ´´´´´´´´´´´´´´´
+-- 
+  UPDATE E.CDDTPPS1
+  SET 
+     NUMDOCIDEN = CASE CODMEMB
+                       WHEN '1079139679' THEN '001407423'
+                       WHEN '1080358581' THEN '20220551'
+                       WHEN '1086374228' THEN '003736053'
+                       WHEN '1087340962' THEN '004941835'
+                       WHEN '1088571078' THEN '001093804'
+                       WHEN '1090033679' THEN '001437633'
+                       WHEN '1098395633' THEN '002298227'
+                       WHEN '1102436589' THEN '001363300'
+                       ELSE NUMDOCIDEN
+                    END,
+      TIPDOCIDEN = CASE CODMEMB
+                       WHEN '1079139679' THEN 3
+                       WHEN '1080358581' THEN 3
+                       WHEN '1086374228' THEN 3
+                       WHEN '1087340962' THEN 3
+                       WHEN '1088571078' THEN 3
+                       WHEN '1090033679' THEN 3
+                       WHEN '1098395633' THEN 3
+                       WHEN '1102436589' THEN 3
+                       ELSE TIPDOCIDEN
+                    END      
+  WHERE CODMEMB IN ('1079139679',
+                    '1080358581',
+                    '1086374228',
+                    '1087340962',
+                    '1088571078',
+                    '1090033679',
+                    '1098395633',
+                    '1102436589');
+
+--  ________________
+-- / QUERY REVERSE /
+-- ´´´´´´´´´´´´´´´´
+-- 
+  UPDATE E.CDDTPPS1
+  SET 
+     NUMDOCIDEN = CASE CODMEMB
+                       WHEN '1079139679' THEN '49090986'
+                       WHEN '1080358581' THEN '03672024'
+                       WHEN '1086374228' THEN 'G29406165'
+                       WHEN '1087340962' THEN 'PAP485455'
+                       WHEN '1088571078' THEN 'AAK050206'
+                       WHEN '1090033679' THEN 'XDC864941'
+                       WHEN '1098395633' THEN 'AAK666021'
+                       WHEN '1102436589' THEN '49099192'
+                       ELSE NUMDOCIDEN
+                    END,
+      TIPDOCIDEN = CASE CODMEMB
+                       WHEN '1079139679' THEN 1
+                       WHEN '1080358581' THEN 3
+                       WHEN '1086374228' THEN 5
+                       WHEN '1087340962' THEN 5
+                       WHEN '1088571078' THEN 5
+                       WHEN '1090033679' THEN 5
+                       WHEN '1098395633' THEN 5
+                       WHEN '1102436589' THEN 1
+                       ELSE TIPDOCIDEN
+                    END     
+  WHERE CODMEMB IN ('1079139679',
+                    '1080358581',
+                    '1086374228',
+                    '1087340962',
+                    '1088571078',
+                    '1090033679',
+                    '1098395633',
+                    '1102436589');
+
+
+
++-----------------------------------------------------------------------+
+|                         QUERYS TABLA CDDTPPS2                         |
++-----------------------------------------------------------------------+
+--  _______________
+-- / QUERY SELECT /
+-- ´´´´´´´´´´´´´´´
+-- 
+    SELECT CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC,CUENTA 
+    FROM E.CDDTPPS2
+    WHERE 
+    (CODMEMB = '1079139679' AND CUENTA = '000007578522' AND NUMSEC = 1) OR
+    (CODMEMB = '1080358581' AND CUENTA = '000008628800' AND NUMSEC = 1) OR
+    (CODMEMB = '1086374228' AND CUENTA = '000007683104' AND NUMSEC = 1) OR
+    (CODMEMB = '1087340962' AND CUENTA = '000008736533' AND NUMSEC = 1) OR
+    (CODMEMB = '1088571078' AND CUENTA = '000006520280' AND NUMSEC = 1) OR
+    (CODMEMB = '1090033679' AND CUENTA = '000008475667' AND NUMSEC = 1) OR
+    (CODMEMB = '1098395633' AND CUENTA = '000007464725' AND NUMSEC = 1) OR
+    (CODMEMB = '1102436589' AND CUENTA = '000008939126' AND NUMSEC = 1)
+    ORDER BY CODMEMB,NUMDOCIDEN,TIPDOCIDEN,NUMSEC ASC;
+
+--  _______________
+-- / QUERY UPDATE /
+-- ´´´´´´´´´´´´´´´
+-- 
+UPDATE E.CDDTPPS2
+SET 
+  NUMDOCIDEN = CASE 
+      WHEN  CODMEMB = '1079139679' 
+        AND CUENTA  = '000007578522' AND NUMSEC  = 1 THEN '001407423'
+      WHEN  CODMEMB = '1080358581' 
+        AND CUENTA  = '000008628800' AND NUMSEC  = 1 THEN '20220551'
+      WHEN  CODMEMB = '1086374228' 
+        AND CUENTA  = '000007683104' AND NUMSEC  = 1 THEN '003736053'
+      WHEN  CODMEMB = '1087340962' 
+        AND CUENTA  = '000008736533' AND NUMSEC  = 1 THEN '004941835'
+      WHEN  CODMEMB = '1088571078' 
+        AND CUENTA  = '000006520280' AND NUMSEC  = 1 THEN '001093804'
+      WHEN  CODMEMB = '1090033679' 
+        AND CUENTA  = '000008475667' AND NUMSEC  = 1 THEN '001437633'
+      WHEN  CODMEMB = '1098395633' 
+        AND CUENTA  = '000007464725' AND NUMSEC  = 1 THEN '002298227'
+      WHEN  CODMEMB = '1102436589' 
+        AND CUENTA  = '000008939126' AND NUMSEC  = 1 THEN '001363300'
+      ELSE  NUMDOCIDEN 
+  END,
+  TIPDOCIDEN = CASE 
+      WHEN  CODMEMB = '1079139679' 
+        AND CUENTA  = '000007578522' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1080358581' 
+        AND CUENTA  = '000008628800' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1086374228' 
+        AND CUENTA  = '000007683104' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1087340962' 
+        AND CUENTA  = '000008736533' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1088571078' 
+        AND CUENTA  = '000006520280' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1090033679' 
+        AND CUENTA  = '000008475667' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1098395633' 
+        AND CUENTA  = '000007464725' AND NUMSEC  = 1 THEN  3
+      WHEN  CODMEMB = '1102436589' 
+        AND CUENTA  = '000008939126' AND NUMSEC  = 1 THEN  3
+      ELSE  TIPDOCIDEN
+  END
+WHERE CODMEMB IN ('1079139679',
+                  '1080358581',
+                  '1086374228',
+                  '1087340962',
+                  '1088571078',
+                  '1090033679',
+                  '1098395633',
+                  '1102436589');       
+
+--  ________________
+-- / QUERY REVERSE /
+-- ´´´´´´´´´´´´´´´´
+-- 
+UPDATE A.CDDTPPS2
+SET 
+  NUMDOCIDEN = CASE 
+      WHEN  CODMEMB = '1079139679' 
+        AND CUENTA  = '000007578522' AND NUMSEC  = 1 THEN '49090986'
+      WHEN  CODMEMB = '1080358581' 
+        AND CUENTA  = '000008628800' AND NUMSEC  = 1 THEN '03672024'
+      WHEN  CODMEMB = '1086374228' 
+        AND CUENTA  = '000007683104' AND NUMSEC  = 1 THEN 'G29406165'
+      WHEN  CODMEMB = '1087340962' 
+        AND CUENTA  = '000008736533' AND NUMSEC  = 1 THEN 'PAP485455'
+      WHEN  CODMEMB = '1088571078' 
+        AND CUENTA  = '000006520280' AND NUMSEC  = 1 THEN 'AAK050206'
+      WHEN  CODMEMB = '1090033679' 
+        AND CUENTA  = '000008475667' AND NUMSEC  = 1 THEN 'XDC864941'
+      WHEN  CODMEMB = '1098395633' 
+        AND CUENTA  = '000007464725' AND NUMSEC  = 1 THEN 'AAK666021'
+      WHEN  CODMEMB = '1102436589' 
+        AND CUENTA  = '000008939126' AND NUMSEC  = 1 THEN '49099192'
+      ELSE  NUMDOCIDEN 
+  END,
+  TIPDOCIDEN = CASE 
+      WHEN  CODMEMB = '1079139679' 
+        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN 1
+      WHEN  CODMEMB = '1080358581' 
+        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN 3
+      WHEN  CODMEMB = '1086374228' 
+        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN 5
+      WHEN  CODMEMB = '1087340962' 
+        AND CUENTA  = '000002126454' AND NUMSEC  = 1 THEN 5
+      WHEN  CODMEMB = '1088571078' 
+        AND CUENTA  = '000002882532' AND NUMSEC  = 1 THEN 5
+      WHEN  CODMEMB = '1090033679' 
+        AND CUENTA  = '000002679207' AND NUMSEC  = 1 THEN 5
+      WHEN  CODMEMB = '1098395633' 
+        AND CUENTA  = '000002300417' AND NUMSEC  = 1 THEN 5
+      WHEN  CODMEMB = '1102436589' 
+        AND CUENTA  = '000002305141' AND NUMSEC  = 1 THEN 1
+      ELSE  TIPDOCIDEN
+  END
+WHERE CODMEMB IN (
+    '1079139679',
+    '1080358581',
+    '1086374228',
+    '1087340962',
+    '1088571078',
+    '1090033679',
+    '1098395633',
+    '1102436589'
+);
 
 
